@@ -13,9 +13,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddScoped<EventManagement.Api.Repositories.IEventRepository, EventManagement.Api.Repositories.EventRepository>();
 builder.Services.AddScoped<EventManagement.Api.Services.IEventService, EventManagement.Api.Services.EventService>();
-builder.Services.AddScoped<EventManagement.Api.Repositories.IUserRepository, EventManagement.Api.Repositories.UserRepository>();
+builder.Services.AddSingleton<EventManagement.Api.Repositories.IUserRepository, EventManagement.Api.Repositories.UserRepository>();
 builder.Services.AddScoped<EventManagement.Api.Services.IUserService, EventManagement.Api.Services.UserService>();
-builder.Services.AddScoped<EventManagement.Api.Repositories.IRegistrationRepository, EventManagement.Api.Repositories.RegistrationRepository>();
+builder.Services.AddSingleton<EventManagement.Api.Repositories.IRegistrationRepository, EventManagement.Api.Repositories.RegistrationRepository>();
 builder.Services.AddScoped<EventManagement.Api.Services.IRegistrationService, EventManagement.Api.Services.RegistrationService>();
 
 var app = builder.Build();
